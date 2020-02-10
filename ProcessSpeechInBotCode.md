@@ -125,3 +125,19 @@ protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivi
     }
 }
 ```
+
+## Playing pre-recorded audio to the customer.
+
+Bot can also play pre-recorded audio to the customer using audio element in ssml. The audio element in SSML supports the insertion of recorded audio files and the insertion of other audio formats in conjunction with synthesized speech output. Here is the list of <a href = "https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-text-to-speech#audio-outputs">supported audio formats</a>. If the audio element is not empty then the contents should be the marked-up text to be spoken. The content will be played in specified voice if the audio document is not available or media type of audio is unsupported. 
+
+Note: This is a preview feature.
+
+Here is example ssml:
+
+```xml
+    <speak version=\"1.0\" xml:lang=\"en-US\">
+      <voice name ='Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'>
+        <audio src='http://commondatastorage.googleapis.com/codeskulptor-assets/jump.ogg'>this is fallback text</audio>
+      </voice>
+    </speak>
+```
