@@ -137,7 +137,7 @@ Here is example ssml:
 ```xml
     <speak version=\"1.0\" xml:lang=\"en-US\">
       <voice name ='Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'>
-        <audio src='http://commondatastorage.googleapis.com/codeskulptor-assets/jump.ogg'>this is fallback text</audio>
+        <audio src='https://github.com/microsoft/botframework-ivr/media/whatstheweatherlike.mp3'>this is fallback text</audio>
       </voice>
     </speak>
 ```
