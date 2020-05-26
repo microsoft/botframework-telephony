@@ -29,6 +29,9 @@ Ideally, this should be same as Bot's Azure region for best latencies. Please no
         * West Europe
         * North Europe
         * Southeast Asia
+        * West Central US
+        * East Asia
+        * Central India
    * For **Pricing tier**, select **F0** (Free Tier) to start with. Note that usage in Free tier is subjected to [Free tier Limits](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/)
    * For **Resource group**, select an existing resource group or create a new resource group.
 After you've entered all required information, click **Create**. 
