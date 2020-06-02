@@ -141,7 +141,7 @@ Telephony channel enriches FromId field of activities with phone number of the c
 
             if (account != null)
             {
-                responseText = $"Hello and thank you for calling billing department. We have pulled up your account associated with {callerPhoneNumber}. Do you want to continue with this accont? Say yes or now.";  
+                responseText = $"Hello and thank you for calling billing department. We have pulled up your account associated with {callerPhoneNumber}. Do you want to continue with this accont? Say yes or no.";  
             }
             else
             {
