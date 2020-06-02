@@ -126,6 +126,56 @@ protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivi
 }
 ```
 
+## Processing logic based on the caller Id of user.
+You can use ```OnMessageActivityAsync``` method to process user voice input:
+
+```csharp
+protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
+{
+    string requestMessage = turnContext.Activity.Text.Trim().ToLower();
+    string responseMessage = null;
+
+    if (string.Equals("1", requestMessage) ||
+        string.Equals("one", requestMessage, System.StringComparison.OrdinalIgnoreCase))
+    {
+        var responseText = @"Hello and thank you for calling billing department.  
+          If you are a current customer, press 1.  
+          If you are a new customer, press 2.";
+          
+        responseMessage = SimpleConvertToSSML(responseText, "en-US", "en-US-JessaNeural");
+    }
+    else if (string.Equals("2", requestMessage) ||
+        string.Equals("two", requestMessage, System.StringComparison.OrdinalIgnoreCase) ||
+        string.Equals("to", requestMessage, System.StringComparison.OrdinalIgnoreCase))
+    {
+        var responseText = @"Thank you for calling new customer information line.  
+            If you want to sign up as the customer, press 1. 
+            For general questions, press 2.";
+            
+        responseMessage = SimpleConvertToSSML(responseText, "en-US", "en-US-GuyNeural");
+    }
+    else if (string.Equals("3", requestMessage) ||
+        string.Equals("three", requestMessage, System.StringComparison.OrdinalIgnoreCase))
+    {
+        var responseText = @"Diese Telefonleitung beantwortet alle allgemeinen Fragen. 
+          Sagen Sie mir bitte in Ihren eigenen Worten, worüber Sie anrufen.";
+          
+        responseMessage = SimpleConvertToSSML(responseText, "de-DE", "de-DE-KatjaNeural");
+    }
+    else
+    {
+        responseMessage = SimpleConvertToSSML("What I heard was \"" + requestMessage + "\"", "en-US", "en-US-GuyNeural");
+    }
+
+    if (!string.IsNullOrWhiteSpace(responseMessage))
+    {
+        await turnContext.SendActivityAsync(
+            GetActivity(responseMessage, responseMessage),
+            cancellationToken);
+    }
+}
+```
+
 ## Playing pre-recorded audio to the customer.
 
 Bot can also play pre-recorded audio to the customer using audio element in ssml. The audio element in SSML supports the insertion of recorded audio files and the insertion of other audio formats in conjunction with synthesized speech output. Here is the list of <a href = "https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-text-to-speech#audio-outputs">supported audio formats</a>. If the audio element is not empty then the contents should be the marked-up text to be spoken. The content will be played in specified voice if the audio document is not available or media type of audio is unsupported. 
