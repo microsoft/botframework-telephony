@@ -127,53 +127,32 @@ protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivi
 ```
 
 ## Processing logic based on the caller Id of user.
-You can use ```OnMessageActivityAsync``` method to process user voice input:
+
+Telephony channel enriches FromId field of activities with phone number of the caller(callerId).
 
 ```csharp
-protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
-{
-    string requestMessage = turnContext.Activity.Text.Trim().ToLower();
-    string responseMessage = null;
+        protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
+        {
+            string responseText;
+            string responseMessage = null;
 
-    if (string.Equals("1", requestMessage) ||
-        string.Equals("one", requestMessage, System.StringComparison.OrdinalIgnoreCase))
-    {
-        var responseText = @"Hello and thank you for calling billing department.  
-          If you are a current customer, press 1.  
-          If you are a new customer, press 2.";
-          
-        responseMessage = SimpleConvertToSSML(responseText, "en-US", "en-US-JessaNeural");
-    }
-    else if (string.Equals("2", requestMessage) ||
-        string.Equals("two", requestMessage, System.StringComparison.OrdinalIgnoreCase) ||
-        string.Equals("to", requestMessage, System.StringComparison.OrdinalIgnoreCase))
-    {
-        var responseText = @"Thank you for calling new customer information line.  
-            If you want to sign up as the customer, press 1. 
-            For general questions, press 2.";
-            
-        responseMessage = SimpleConvertToSSML(responseText, "en-US", "en-US-GuyNeural");
-    }
-    else if (string.Equals("3", requestMessage) ||
-        string.Equals("three", requestMessage, System.StringComparison.OrdinalIgnoreCase))
-    {
-        var responseText = @"Diese Telefonleitung beantwortet alle allgemeinen Fragen. 
-          Sagen Sie mir bitte in Ihren eigenen Worten, worüber Sie anrufen.";
-          
-        responseMessage = SimpleConvertToSSML(responseText, "de-DE", "de-DE-KatjaNeural");
-    }
-    else
-    {
-        responseMessage = SimpleConvertToSSML("What I heard was \"" + requestMessage + "\"", "en-US", "en-US-GuyNeural");
-    }
+            var callerPhoneNumber = turnContext.Activity.From.Id;
+            UserAccount account = GetUserAccount(callerId);
 
-    if (!string.IsNullOrWhiteSpace(responseMessage))
-    {
-        await turnContext.SendActivityAsync(
-            GetActivity(responseMessage, responseMessage),
-            cancellationToken);
-    }
-}
+            if (account != null)
+            {
+                responseText = $"Hello and thank you for calling billing department. We have pulled up your account associated with {callerPhoneNumber}. Do you want to continue with this accont? Say yes or now.";  
+            }
+            else
+            {
+                responseText = $"Hello and thank you for calling billing department. Can you please provide phone number associate with the account?";
+            }
+            responseMessage = SimpleConvertToSSML(responseText, "en-US", "en-US-JessaNeural");
+
+            await turnContext.SendActivityAsync(
+                GetActivity(responseMessage, responseMessage),
+                cancellationToken);
+        }
 ```
 
 ## Playing pre-recorded audio to the customer.
