@@ -4,6 +4,88 @@ With Azure Speech Services, you get access to best-in-class Speech-to-Text and T
 
 Azure Speech Services includes ability to use a neural voice, i.e. synthesized speech that is nearly indistinguishable from the human recordings. Neural voices can be used to make interactions with chatbots and voice assistants more natural and engaging. [Learn more about Text-to-Speech and neural voices here](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support#text-to-speech).
 
+
+## 1. Processing Audio input
+
+You start by processing audio input using the OnMessageActivityAsync function:
+
+```csharp
+protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
+{
+    string requestMessage = turnContext.Activity.Text.Trim().ToLower();
+    string responseMessage = null;
+
+    if (string.Equals("1", requestMessage) ||
+        string.Equals("one", requestMessage, System.StringComparison.OrdinalIgnoreCase))
+    {
+        var responseText = @"Hello and thank you for calling billing department.  
+          If you are a current customer, press 1.  
+          If you are a new customer, press 2.";
+          
+        responseMessage = SimpleConvertToSSML(responseText, "en-US", "en-US-JessaNeural");
+    }
+    else if (string.Equals("2", requestMessage) ||
+        string.Equals("two", requestMessage, System.StringComparison.OrdinalIgnoreCase) ||
+        string.Equals("to", requestMessage, System.StringComparison.OrdinalIgnoreCase))
+    {
+        var responseText = @"Thank you for calling new customer information line.  
+            If you want to sign up as the customer, press 1. 
+            For general questions, press 2.";
+            
+        responseMessage = SimpleConvertToSSML(responseText, "en-US", "en-US-GuyNeural");
+    }
+    else if (string.Equals("3", requestMessage) ||
+        string.Equals("three", requestMessage, System.StringComparison.OrdinalIgnoreCase))
+    {
+        var responseText = @"Diese Telefonleitung beantwortet alle allgemeinen Fragen. 
+          Sagen Sie mir bitte in Ihren eigenen Worten, worüber Sie anrufen.";
+          
+        responseMessage = SimpleConvertToSSML(responseText, "de-DE", "de-DE-KatjaNeural");
+    }
+    else
+    {
+        responseMessage = SimpleConvertToSSML("What I heard was \"" + requestMessage + "\"", "en-US", "en-US-GuyNeural");
+    }
+
+    if (!string.IsNullOrWhiteSpace(responseMessage))
+    {
+        await turnContext.SendActivityAsync(
+            GetActivity(responseMessage, responseMessage),
+            cancellationToken);
+    }
+}
+```
+
+## 1.1. Extract callerId from TurnContext.Activity 
+
+Telephony channel enriches FromId field of activities with phone number of the caller(callerId).
+
+```csharp
+        protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
+        {
+            string responseText;
+            string responseMessage = null;
+
+            var callerId = turnContext.Activity.From.Id;
+            UserAccount account = GetUserAccount(callerId);
+
+            if (account != null)
+            {
+                responseText = $"Hello and thank you for calling billing department. We have pulled up your account associated with {callerId}. Do you want to continue with this account? Say yes or no.";  
+            }
+            else
+            {
+                responseText = $"Hello and thank you for calling billing department. Can you please provide phone number associated with the account?";
+            }
+            responseMessage = SimpleConvertToSSML(responseText, "en-US", "en-US-JessaNeural");
+
+            await turnContext.SendActivityAsync(
+                GetActivity(responseMessage, responseMessage),
+                cancellationToken);
+        }
+```
+
+
 ## 2. Making your bot speak
 Populate the Speak field in the response activities to send synthesized audio output back to the user
 
