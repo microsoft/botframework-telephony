@@ -56,7 +56,7 @@ protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivi
 }
 ```
 
-## 1.1. Extract callerId from TurnContext.Activity 
+### 1.1. Extract callerId from TurnContext.Activity 
 
 Telephony channel enriches FromId field of activities with phone number of the caller(callerId).
 
