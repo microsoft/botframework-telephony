@@ -136,12 +136,12 @@ Telephony channel enriches FromId field of activities with phone number of the c
             string responseText;
             string responseMessage = null;
 
-            var callerPhoneNumber = turnContext.Activity.From.Id;
+            var callerId = turnContext.Activity.From.Id;
             UserAccount account = GetUserAccount(callerId);
 
             if (account != null)
             {
-                responseText = $"Hello and thank you for calling billing department. We have pulled up your account associated with {callerPhoneNumber}. Do you want to continue with this accont? Say yes or no.";  
+                responseText = $"Hello and thank you for calling billing department. We have pulled up your account associated with {callerId}. Do you want to continue with this account? Say yes or no.";  
             }
             else
             {
