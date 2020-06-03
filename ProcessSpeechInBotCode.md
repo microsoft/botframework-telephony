@@ -145,7 +145,7 @@ Telephony channel enriches FromId field of activities with phone number of the c
             }
             else
             {
-                responseText = $"Hello and thank you for calling billing department. Can you please provide phone number associate with the account?";
+                responseText = $"Hello and thank you for calling billing department. Can you please provide phone number associated with the account?";
             }
             responseMessage = SimpleConvertToSSML(responseText, "en-US", "en-US-JessaNeural");
 
