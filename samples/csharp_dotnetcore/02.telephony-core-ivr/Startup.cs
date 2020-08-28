@@ -46,8 +46,10 @@ namespace Microsoft.BotBuilderSamples
             // The MainDialog that will be run by the bot.
             services.AddSingleton<MainDialog>();
 
-            //Register our voice font of choice. Here we are using JessaNeural. Visit 
-            var voiceFactory = new VoiceFactory("Microsoft Server Speech Text to Speech Voice (en-US, JessaNeural)", "en-US", "customerservice");
+            // Register our voice font of choice. Here we are using en-US-AriaNeural.
+            // Visit for the list of all our voice fonts - https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support#text-to-speech
+            // Pls note that neural voice fonts are only available in certain regions - https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/regions#text-to-speech
+            var voiceFactory = new VoiceFactory("en-US-AriaNeural", "en-US", "customerservice");
             services.AddSingleton(voiceFactory);
 
             // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
