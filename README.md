@@ -35,6 +35,15 @@ __Please note__:  This is a Beta (preview) version of software, and as with any 
 
 File a bug or suggestion in [GitHub Issues](https://github.com/microsoft/botframework-telephony/issues).
 
+## Limitations
+Currently, Telephony channel has some regional and capabilities limitations.
+
+* Azure Communications Service is currently limited to offering PSTN numbers only for US billed customers to acquire US phone numbers.
+* Azure Communications Service currently does not support free, trial or Visual Studio benefits subscriptions.
+* Telephony Speech is only available in WestUS2 and EastUS, and so, please create your Cognitive Services key in one of those regions.
+* `en-US` is set as the default locale on the Telephony channel, this can be changed from within the bot or you can reach out to us at [telephony-preview@microsoft.com](mailto:telephony-preview@microsoft.com) to change the default locale for your bot.
+
+We working to remove these limitations as soon as possible. For feature roadmap, please refer to [**Roadmap.**](roadmap.md)
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
