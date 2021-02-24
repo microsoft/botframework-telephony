@@ -1,6 +1,6 @@
 # Transfer call to an agent
 
-There could be various occasions when a bot would like to transfer call to a human agent. Like any other channel, Telephony channel allows you to transfer call to an agent over a phone number. Read an overview of Human Handoff approaches in the Bot Framework [here](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-design-pattern-handoff-human?view=azure-bot-service-4.0).
+There could be various occasions when a bot would like to transfer call to a human agent. Like any other channel, Telephony channel allows you to transfer call to an agent over a phone number. Read an overview of Human Handoff approaches in the Bot Framework [here](https://docs.microsoft.com/azure/bot-service/bot-service-design-pattern-handoff-human?view=azure-bot-service-4.0).
 
 ## Initiate transfer
 You can send an event created using ```EventFactory.CreateHandoffInitiation``` method to initiate call transfer.

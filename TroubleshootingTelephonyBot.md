@@ -8,7 +8,7 @@ This indicates that the telephony service is picking up, but having trouble send
 
 ### Using SSML? Make sure to use the full name of the voice font
 
-Currently [SSML](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-synthesis-markup) voice fonts need to be specified using their full name.
+Currently [SSML](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-synthesis-markup) voice fonts need to be specified using their full name.
 
 ```csharp
 protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
@@ -30,7 +30,7 @@ protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivi
 }
 ```
 
-Validate that your speech account is in a region that supports the voice you are attempting to use. [Regions](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/regions#standard-and-neural-voices)
+Validate that your speech account is in a region that supports the voice you are attempting to use. [Regions](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#standard-and-neural-voices)
 
 ## Getting an error when binding a cognitive services key to a number. 
 

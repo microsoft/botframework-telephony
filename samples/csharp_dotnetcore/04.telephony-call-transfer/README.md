@@ -13,7 +13,7 @@ To test this bot locally, do the following:
 
 ## Telephony call with custom action
 
-Refer to [documentation](https://docs.microsoft.com/en-us/composer/how-to-add-custom-action) on the conceptual explanation of Composer custom actions.
+Refer to [documentation](https://docs.microsoft.com/composer/how-to-add-custom-action) on the conceptual explanation of Composer custom actions.
 
 Call transfer is implemented in runtime\call-transfer-ca.
 
