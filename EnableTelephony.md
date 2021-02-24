@@ -1,13 +1,18 @@
 # Telephony Channel
-Telephony Channel in Microsoft Bot Framework allows you to bind an existing PSTN phone number acquired using Microsoft Teams Phone System with a Bot in Microsoft Bot Framework.
+Telephony Channel in Microsoft Bot Framework allows you to bind a Azure Communication Services' PSTN phone number with Microsoft Bot Framework bot.
 
-Telephony channel under the hood is built upon Microsoft Speech Services to allow Speech to Text and Text to Speech capabilities crucial for enabling an audio interaction/conversation over phone lines.
+Telephony channel under the hood is built on Microsoft Speech Services to allow Speech to Text and Text to Speech capabilities crucial for enabling an audio interaction/conversation over phone lines.
 
 Please follow these steps to enable a Telephony channel for your bot.
 
+## Pre-requisites
+ * [Step 1: Create a new bot](CreateBot.md). You can skip this step if you already have a working bot.
+* [Step 2: Get an Azure Communication Services Resource](https://docs.microsoft.com/azure/communication-services/quickstarts/create-communication-resource) and [acquire a phone number in it](https://docs.microsoft.com/azure/communication-services/quickstarts/telephony-sms/get-phone-number).
+* [Step 3: Create a Cognitive Services Resource](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account). Please note that Telephony channel is currently supported in WestUS2 and EastUS.
+
 ## Enable Telephony Channel in the bot
 
-Once we have created a speech resource, we are ready to use it and configure it using the information collected in previous sections.
+Once we have created a cognitive services resource, we are ready to use it and configure it using the information collected in previous sections.
 
 Go to the [Azure portal](https://portal.azure.com) > Bot (Created in previous [step](CreateBot.md)) > Channels
 
@@ -19,11 +24,11 @@ Click on the Telephony channel:
 
 Configure the channel with following information:
 
-* Telephony number - Acquired previously in [provisioning a new phone number for your bot in Azure Communication Services](https://docs.microsoft.com/en-us/azure/communication-services/quickstarts/telephony-sms/get-phone-number).
-* Azure Communication Service Access Key and Endpoint - Acquired while [creating a Azure Communication Services Resource](https://docs.microsoft.com/en-us/azure/communication-services/quickstarts/create-communication-resource).
-* Cognitive Service Subscription account created during [Cognitive Service account creation](CreateSpeechResource.md).
+* Azure Communication Services' PSTN number in [provisioning a new phone number for your bot in Azure Communication Services](https://docs.microsoft.com/azure/communication-services/quickstarts/telephony-sms/get-phone-number).
+* Azure Communication Service Access Key and Endpoint - Acquired while [creating a Azure Communication Services Resource](https://docs.microsoft.com/azure/communication-services/quickstarts/create-communication-resource).
+* Cognitive Service Subscription account created during [Cognitive Service account creation](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account).
 
-Make sure to specify the Telephony number in the E.164 format shown below.(+11234567890)
+>Make sure to specify the Telephony number in the E.164 format shown below.(+11234567890)
 
 ![](images/create-a-bot/c017-fill-out-settings-click-save.png)
 
