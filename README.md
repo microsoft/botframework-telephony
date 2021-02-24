@@ -23,7 +23,7 @@ __Please note__:  This is a Beta (preview) version of software, and as with any 
 
   * [Step 2: Get an Azure Communication Services Resource](https://docs.microsoft.com/azure/communication-services/quickstarts/create-communication-resource) and [acquire a phone number in it](https://docs.microsoft.com/azure/communication-services/quickstarts/telephony-sms/get-phone-number).
 
-  * [Step 3: Create a Cognitive Services Resource](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account). You need an instance of the Speech Service to convert speech to text (for messages _received_ by the bot) and text to speech (for messages _sent_ by the bot). Please note that Telephony channel is currently supported in WestUS2 and EastUS.
+  * [Step 3: Create a Cognitive Services Resource](CreateCogSvcsResource.md). You need an instance of the Speech Service to convert speech to text (for messages _received_ by the bot) and text to speech (for messages _sent_ by the bot). Please note that Telephony channel is currently supported in WestUS2 and EastUS.
 
   * [Step 4: Configure the Telephony channel](EnableTelephony.md). This step connects it all together.
 

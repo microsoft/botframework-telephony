@@ -8,7 +8,7 @@ Please follow these steps to enable a Telephony channel for your bot.
 ## Pre-requisites
 * [Step 1: Create a new bot](CreateBot.md). You can skip this step if you already have a working bot.
 * [Step 2: Get an Azure Communication Services Resource](https://docs.microsoft.com/azure/communication-services/quickstarts/create-communication-resource) and [acquire a phone number in it](https://docs.microsoft.com/azure/communication-services/quickstarts/telephony-sms/get-phone-number).
-* [Step 3: Create a Cognitive Services Resource](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account). Please note that Telephony channel is currently supported in WestUS2 and EastUS.
+* [Step 3: Create a Cognitive Services Resource](CreateCogSvcsResource.md). Please note that Telephony channel is currently supported in WestUS2 and EastUS.
 
 ## Enable web sockets
 You will need to make a small configuration change so that your bot can communicate with the Telephony channel using web sockets. Follow these steps to enable web sockets:
@@ -34,7 +34,7 @@ Configure the channel with following information:
 
 * Azure Communication Services' PSTN number in [provisioning a new phone number for your bot in Azure Communication Services](https://docs.microsoft.com/azure/communication-services/quickstarts/telephony-sms/get-phone-number).
 * Azure Communication Service Access Key and Endpoint - Acquired while [creating a Azure Communication Services Resource](https://docs.microsoft.com/azure/communication-services/quickstarts/create-communication-resource).
-* Cognitive Service Subscription account created during [Cognitive Service account creation](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account).
+* Cognitive Service Subscription account created during [Cognitive Service account creation](CreateCogSvcsResource.md).
 
 >Make sure to specify the Telephony number in the E.164 format shown below.(+11234567890)
 
