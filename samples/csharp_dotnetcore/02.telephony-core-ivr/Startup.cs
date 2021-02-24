@@ -47,8 +47,8 @@ namespace Microsoft.BotBuilderSamples
             services.AddSingleton<MainDialog>();
 
             // Register our voice font of choice. Here we are using en-US-AriaNeural.
-            // Visit this page for a list of all our voice fonts - https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support#text-to-speech
-            // Please note that neural voice fonts are only available in certain regions - https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/regions#text-to-speech
+            // Visit this page for a list of all our voice fonts - https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech
+            // Please note that neural voice fonts are only available in certain regions - https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#text-to-speech
             var voiceFactory = new VoiceFactory("en-US-AriaNeural", "en-US", "customerservice");
             services.AddSingleton(voiceFactory);
 

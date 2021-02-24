@@ -36,6 +36,6 @@ parameters of deploy.ps1:
 | language | language of yoru qna & luis, defaults to 'en-us' |
 | botPath | path to your bot assests, defaults to ../../ for ejected runtime |
 | logFile | path to save your log file, deafults to deploy_log.txt |
-| runtimeIdentifier | runtime identifier of your C# publishing targets, defaults to win-x64, please refer to this doc: https://docs.microsoft.com/en-us/dotnet/core/rid-catalog|
+| runtimeIdentifier | runtime identifier of your C# publishing targets, defaults to win-x64, please refer to this doc: https://docs.microsoft.com/dotnet/core/rid-catalog|
 | luisResource | the name of your luis prediction (not authoring) resource |
 | publishProfilePath | the path to your publishing profile (json formate) |

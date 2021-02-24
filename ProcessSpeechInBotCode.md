@@ -1,8 +1,8 @@
 # Processing speech inside the bot
 
-With Azure Speech Services, you get access to best-in-class Speech-to-Text and Text-to-Speech capabilities. [Sign up using this document here](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/get-started). 
+With Azure Speech Services, you get access to best-in-class Speech-to-Text and Text-to-Speech capabilities. [Sign up using this document here](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started). 
 
-Azure Speech Services includes ability to use a neural voice, i.e. synthesized speech that is nearly indistinguishable from the human recordings. Neural voices can be used to make interactions with chatbots and voice assistants more natural and engaging. [Learn more about Text-to-Speech and neural voices here](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support#text-to-speech).
+Azure Speech Services includes ability to use a neural voice, i.e. synthesized speech that is nearly indistinguishable from the human recordings. Neural voices can be used to make interactions with chatbots and voice assistants more natural and engaging. [Learn more about Text-to-Speech and neural voices here](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech).
 
 
 ## 1. Processing Audio input
@@ -116,7 +116,7 @@ protected override async Task OnConversationUpdateActivityAsync
 
   ### 3.1. SSML:
 
-  For more advanced voice control, you can leverage the full power of [Speech Synthesis Markup Language (SSML)](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-synthesis-markup) to customize the speech output, including adding regional differences, specifying genders, speaking styles (cheerful, empathetic, etc).
+  For more advanced voice control, you can leverage the full power of [Speech Synthesis Markup Language (SSML)](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-synthesis-markup) to customize the speech output, including adding regional differences, specifying genders, speaking styles (cheerful, empathetic, etc).
 
   ```csharp
   private string SimpleConvertToSSML(string text, string voiceId, string locale)
@@ -161,7 +161,7 @@ You can test it using the [Audio Content Creation tool](http://speech.microsoft.
 
   ### 3.2. Playing pre-recorded audio to the customer:
 
-Bot can also play pre-recorded audio to the customer using audio element in ssml. The audio element in SSML supports the insertion of recorded audio files and the insertion of other audio formats in conjunction with synthesized speech output. Here is the list of <a href = "https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-text-to-speech#audio-outputs">supported audio formats</a>. If the audio element is not empty then the contents should be the marked-up text to be spoken. The content will be played in specified voice if the audio document is not available or media type of audio is unsupported. 
+Bot can also play pre-recorded audio to the customer using audio element in ssml. The audio element in SSML supports the insertion of recorded audio files and the insertion of other audio formats in conjunction with synthesized speech output. Here is the list of <a href = "https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-text-to-speech#audio-outputs">supported audio formats</a>. If the audio element is not empty then the contents should be the marked-up text to be spoken. The content will be played in specified voice if the audio document is not available or media type of audio is unsupported. 
 
 Note: This is a preview feature.
 

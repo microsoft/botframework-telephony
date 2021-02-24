@@ -18,8 +18,8 @@ Param(
 
 if ($PSVersionTable.PSVersion.Major -lt 6) {
 	Write-Host "! Powershell 6 is required, current version is $($PSVersionTable.PSVersion.Major), please refer following documents for help."
-	Write-Host "For Windows - https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-6"
-	Write-Host "For Mac - https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6"
+	Write-Host "For Windows - https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-6"
+	Write-Host "For Mac - https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6"
 	Break
 }
 

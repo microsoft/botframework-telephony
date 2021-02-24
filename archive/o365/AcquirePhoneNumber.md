@@ -11,7 +11,7 @@ Before you start the guide, make sure you meet the following requirements
   * An Office 365 E3 license + a calling plan 
   * An Office 365 E5 license.
 
-**Admin permissions** You must have admin permissions to perform these steps ([Admin roles in Office 365](https://docs.microsoft.com/en-us/office365/admin/add-users/about-admin-roles?view=o365-worldwide)). .
+**Admin permissions** You must have admin permissions to perform these steps ([Admin roles in Office 365](https://docs.microsoft.com/office365/admin/add-users/about-admin-roles?view=o365-worldwide)). .
 This means
    * Either, all the steps are performed by "Global Administrator" for your organization
    * Or, "Microsoft Teams Admin" handles all the steps and "User/License admin" is needed for assigning the licenses.
@@ -65,7 +65,7 @@ Click "+" or "+ Add" to create a new Service number.  Make sure you select a Ser
 In the next page that follows, select the Country, Toll-Free/State/Region and a City to obtain a specific area code. Additionaly also specify the number of phone numbers you need.
 
 **NOTE**:
- * Due to varying laws, not all countries are available in this dropdown. **If your target country is not in the dropdown**, you will need to follow instructions [here](https://docs.microsoft.com/en-us/microsoftteams/manage-phone-numbers-for-your-organization/manage-phone-numbers-for-your-organization?toc=/skypeforbusiness/toc.json&bc=/skypeforbusiness/breadcrumb/toc.json) and provide the "911" emergency local address required by local authorities for calls originating from that phone number.
+ * Due to varying laws, not all countries are available in this dropdown. **If your target country is not in the dropdown**, you will need to follow instructions [here](https://docs.microsoft.com/microsoftteams/manage-phone-numbers-for-your-organization/manage-phone-numbers-for-your-organization?toc=/skypeforbusiness/toc.json&bc=/skypeforbusiness/breadcrumb/toc.json) and provide the "911" emergency local address required by local authorities for calls originating from that phone number.
 * If your country is not in the dropdown of countries on that page, please reach out to the number management team at gcstnmsd@microsoft.com, provide them your subscription name and a number of Service Phone Numbers required. That team will work with you to provision the numbers you require into your subscription and clear all region-specific local authority requirements.
 
 If you will have several bots in your IVR as skills (you can develop each skill separately and transfer calls between those), you can obtain more than one phone number. You can also use one phone number for pre-production, and one for production loads:

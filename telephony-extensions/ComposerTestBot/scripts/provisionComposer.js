@@ -180,7 +180,7 @@ const unpackObject = (output) => {
 };
 
 /**
- * For more information about this api, please refer to this doc: https://docs.microsoft.com/en-us/rest/api/resources/Tenants/List
+ * For more information about this api, please refer to this doc: https://docs.microsoft.com/rest/api/resources/Tenants/List
  * @param {*} accessToken
  */
 const getTenantId = async (accessToken) => {

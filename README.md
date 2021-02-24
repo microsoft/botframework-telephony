@@ -8,7 +8,7 @@
 
 # Bot Framework Telephony Channel
 
-**Telephony channel** is a channel in Microsoft Bot Framework that enables the bot to interact with users over the phone. It leverages the power of [Microsoft Bot Framework](https://dev.botframework.com) combined with the [Azure Communication Services](https://azure.microsoft.com/en-us/services/communication-services) and the [Azure Speech Services](https://azure.microsoft.com/en-us/services/cognitive-services/speech-services). Telephony Channel is currently in Public Preview, available broadly for the US-based Azure subscriptions. If you have general questions about Public Preview, you can reach us at [telephony-preview@microsoft.com](mailto:telephony-preview@microsoft.com). 
+**Telephony channel** is a channel in Microsoft Bot Framework that enables the bot to interact with users over the phone. It leverages the power of [Microsoft Bot Framework](https://dev.botframework.com) combined with the [Azure Communication Services](https://azure.microsoft.com/services/communication-services) and the [Azure Speech Services](https://azure.microsoft.com/services/cognitive-services/speech-services). Telephony Channel is currently in Public Preview, available broadly for the US-based Azure subscriptions. If you have general questions about Public Preview, you can reach us at [telephony-preview@microsoft.com](mailto:telephony-preview@microsoft.com). 
  
  ---
 __Please note__:  This is a Beta (preview) version of software, and as with any preview software, there may be initial risks and limitations you run into, such as a need to integrate with your existing IVR, etc. The Telephony Channel and Azure Communication Service are in-preview and should not be used for production deployments. We are working on and supporting this product and are here to help you in case you run into any issues. Submit an issue [here](https://github.com/microsoft/botframework-telephony/issues).
@@ -20,9 +20,9 @@ __Please note__:  This is a Beta (preview) version of software, and as with any 
 * **Getting started**. Are you ready to build a bot that answers phone calls? Follow these four easy steps:
 
   * [Step 1: Create a new bot](CreateBot.md). You can skip this step if you already have a working bot.
-  * [Step 2: Get an Azure Communication Services Resource](https://docs.microsoft.com/en-us/azure/communication-services/quickstarts/create-communication-resource) and [acquire a phone number in it](https://docs.microsoft.com/en-us/azure/communication-services/quickstarts/telephony-sms/get-phone-number).
+  * [Step 2: Get an Azure Communication Services Resource](https://docs.microsoft.com/azure/communication-services/quickstarts/create-communication-resource) and [acquire a phone number in it](https://docs.microsoft.com/azure/communication-services/quickstarts/telephony-sms/get-phone-number).
 
-  * [Step 3: Create a speech resource](CreateSpeechResource.md). You need an instance of the Speech Service to convert speech to text (for messages _received_ by the bot) and text to speech (for messages _sent_ by the bot)
+  * [Step 3: Create a Cognitive Services Resource](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account). You need an instance of the Speech Service to convert speech to text (for messages _received_ by the bot) and text to speech (for messages _sent_ by the bot). Please note that Telephony channel is currently supported in WestUS2 and EastUS.
   * [Step 4: Configure the Telephony channel](EnableTelephony.md). This step connects it all together.
 
   Once setup, you should be able to dial the acquired phone number using any phone and hear your bot echo your voice. If you hear that, congratulations! You're ready for dive deeper for more advanced features.
@@ -60,6 +60,6 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 ## Reporting Security Issues
 
-Security issues and bugs should be reported privately, via email, to the Microsoft Security Response Center (MSRC) at [secure@microsoft.com](mailto:secure@microsoft.com). You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message. Further information, including the [MSRC PGP](https://technet.microsoft.com/en-us/security/dn606155) key, can be found in the [Security TechCenter](https://technet.microsoft.com/en-us/security/default).
+Security issues and bugs should be reported privately, via email, to the Microsoft Security Response Center (MSRC) at [secure@microsoft.com](mailto:secure@microsoft.com). You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message. Further information, including the [MSRC PGP](https://technet.microsoft.com/security/dn606155) key, can be found in the [Security TechCenter](https://technet.microsoft.com/security/default).
 
 Copyright (c) Microsoft Corporation. All rights reserved.
