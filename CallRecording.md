@@ -4,9 +4,9 @@ __Disclaimer__: Call recording is temporarily available through the Telephony Ch
 
 > Many countries and states have laws and regulations that apply to the recording of PSTN, voice, and video calls, which often require that users consent to the recording of their communications. It is your responsibility to use the call recording capabilities in compliance with the law. You must obtain consent from the parties of recorded communications in a manner that complies with the laws applicable to each participant.
 
-> An Event Grid notification is published when a recording is ready for retrieval, typically 1-2 minutes after the recording process has completed (i.e. meeting ended, recording stopped). Recording event notifications include a document ID, which can be used to retrieve both recorded media and a recording meta-data file:
-- <acs_azure_resource_url>/recording/download/{docid}
-- <acs_azure_resource_url>/recording/download/{docid}/metadata
+An Event Grid notification is published when a recording is ready for retrieval, typically 1-2 minutes after the recording process has completed (i.e. meeting ended, recording stopped). Recording event notifications include a document ID, which can be used to retrieve both recorded media and a recording meta-data file:
+- <azure_communication_service_endpoint>/recording/download/{documentId}
+- <azure_communication_service_endpoint>/recording/download/{documentId}/metadata
 
 Sample code for handling event grid notifications and downloading recording and meta-data files can be found [here](https://github.com/microsoft/botframework-telephony/tree/main/samples/csharp_dotnetcore/05a.telephony-recording-download-function).
 
