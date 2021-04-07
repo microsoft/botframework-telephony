@@ -83,7 +83,7 @@ protected override async Task OnRecordingStartResultAsync(ITurnContext<ICommandR
 ## Retrieve call recordings
 Azure Communication Services provides short term media storage for recordings, please export any recorded content, you wish to preserve, within 48 hours. After 48 hours, recordings will no longer be available.
 
-An Event Grid notification is published when a recording is ready for retrieval, typically 1-2 minutes after the recording process has completed (i.e. meeting ended, recording stopped). Recording event notifications include a document ID, which can be used to retrieve both recorded media and a recording meta-data file:
+An Event Grid notification `Call Recording File Status Updated` is published when a recording is ready for retrieval, typically 1-2 minutes after the recording process has completed (i.e. meeting ended, recording stopped). Recording event notifications include a document ID, which can be used to retrieve both recorded media and a recording meta-data file:
 - <Azure_Communication_Service_Endpoint>/recording/download/{documentId}
 - <Azure_Communication_Service_Endpoint>/recording/download/{documentId}/metadata
 
