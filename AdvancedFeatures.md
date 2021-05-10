@@ -4,6 +4,7 @@ While many bots can be Telephony-enabled by the steps above, you can build more 
 
 * [Process speech inside of the bot](ProcessSpeechInBotCode.md)
 * [Transfer call to an agent](TransferCallOut.md)
+* [Transfer call with context](NumberPoolingTransfer.md)
 * [Terminating a call](TerminateCall.md)
 * [DTMF detection](DTMF.md)
 * [Troubleshooting](TroubleshootingTelephonyBot.md)

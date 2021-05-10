@@ -73,3 +73,4 @@ protected override async Task OnEventActivityAsync(ITurnContext<IEventActivity> 
 ## Notes
 * Phone number should be in international format without dashes ex: +14251231234
 * If target doesn't pick up the call, Telephony Channel would keep calling target again and again.
+* Need transfer with context? Have a gander at [NumberPoolingTransfer](NumberPoolingTransfer.md)
