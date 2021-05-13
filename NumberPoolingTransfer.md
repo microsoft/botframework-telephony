@@ -10,7 +10,7 @@ The idea behind using the number pooling method is that while the number that is
 
 By reserving a phone number from a pool of number on transfer, and storing the context keyed on that number, when the target of the transfer receives the call on that number, they can then look up the context reliably.
 
-This however, is not a completely fool proof method. There exists a chance, however small that a secondary caller manually calls and lands on the pooled number right after the transfer has been initiated. It is thus necessary for the agent to confirm a small tidbit of the context with the caller, so that the call can be verified.
+This however, is not a completely foolproof method. There exists a chance, however small, that a secondary caller manually calls and lands on the pooled number right after the transfer has been initiated. It is thus necessary to authenticate the caller. This can be done, for example, by asking the caller to provide information that that caller would have.
 
 ## Example
 
@@ -19,8 +19,8 @@ It all starts with our caller. They call the bot, and begin a conversation where
 
 First, the bot will reach out to the broker service and request a phone number in exchange for the context the bot wishes to store.
 
-Having received a phone number(let's call it +1 2345678901), the bot can then transfer the call to this number. This phone number is locked/latched for the duration of the transfer, so there will only ever be one context associated with it.
+Having received a phone number (let's call it +1 2345678901), the bot can then transfer the call to this number. This phone number is locked/latched for the duration of the transfer, so there will only ever be one context associated with it.
 
 On the other end of the line, the IVR system recieves a call on +1 2345678901. They make an API call to the broker service, passing this number as a key. In exchange they receive the context that the bot initially passed in. The phone number is then released back to the pool of numbers to transfer to.
 
-After populating the agents view with the context the bot had collected, the agent can validate that the incoming caller is the correct caller by asking a small portion of the information from the user again. For example, "What is the last 4 digits of your social.". If it matches, the incoming caller is validated as the provider of the context, and the agent can continue ahead with the context without reprompting the user further.
+After populating the agent's view with the context the bot had collected, the agent can authenticate the incoming caller and utilize the context received from the bot.
